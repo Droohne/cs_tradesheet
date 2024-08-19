@@ -43,9 +43,9 @@ def next_page(
     # на 7 странице XPATH кнопки next page меняется на /html/body/div[5]/div[1]/div[4]/div[2]/ul/li[13]/a
     # с 8 XPATH становится таким /html/body/div[5]/div[1]/div[4]/div[2]/ul/li[14]/a и остается таким
     xpath = ""
-    if page_number < 7:
+    if page_number < 6:
         xpath = "/html/body/div[5]/div[1]/div[4]/div[2]/ul/li[12]/a"
-    elif page_number == 7:
+    elif page_number == 6:
         xpath = "/html/body/div[5]/div[1]/div[4]/div[2]/ul/li[13]/a"
     else:
         xpath = "/html/body/div[5]/div[1]/div[4]/div[2]/ul/li[14]/a"
@@ -81,7 +81,7 @@ def setup():
         print("generate cookies first")
         quit()
     opts = webdriver.FirefoxOptions()
-    opts.add_argument("--headless")
+    #opts.add_argument("--headless")
     serv = webdriver.FirefoxService(executable_path="/snap/bin/geckodriver")
     driver = webdriver.Firefox(options=opts, service=serv)
 
@@ -150,4 +150,4 @@ def get_items(number_of_pages):
 
 
 if __name__ == "__main__":
-    get_items(1)
+    get_items(25)
