@@ -17,6 +17,7 @@ from pathlib import Path
 
 
 def generate_cookies(driver):
+    open('cookies.json', 'w').close()
     Path("cookies.json").write_text(dumps(driver.get_cookies(), indent=2))
 
 
@@ -59,8 +60,6 @@ def next_page(
         ):
             # Use global variable instead of wasted loops?
             return
-        driver.implicitly_wait(1)
-        next_page(driver, page_number)
 
 
 def find(driver, element_XPATH):
@@ -91,16 +90,14 @@ def setup():
     for cookie in loads(Path("cookies.json").read_text()):
         driver.add_cookie(cookie)
     driver.refresh()
-    driver.implicitly_wait(1)
+    driver.implicitly_wait(3)
     login_link = "https://steamcommunity.com/openid/login?openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.realm=https%3A%2F%2Fbuff.163.com%2F&openid.sreg.required=nickname%2Cemail%2Cfullname&openid.assoc_handle=None&openid.return_to=https%3A%2F%2Fbuff.163.com%2Faccount%2Flogin%2Fsteam%2Fverification%3Fback_url%3D%252Faccount%252Fsteam_bind%252Ffinish&openid.ns.sreg=http%3A%2F%2Fopenid.net%2Fextensions%2Fsreg%2F1.1&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select"
     driver.get(login_link)
-    driver.implicitly_wait(1)
     driver.find_element(By.XPATH, '//*[@id="imageLogin"]').click()
-    driver.implicitly_wait(1)
     # Manual generation of cookies for further automatization
-    # get_cookies(driver)
     # Get cookies to a json file:
-    # Path('cookies.json').write_text(json.dumps(driver.get_cookies(), indent=2))
+    # generate_cookies(driver)
+    # driver.close()
     return driver
 
 
@@ -118,7 +115,6 @@ def get_items(number_of_pages):
     driver.get(link)
     XPATH_list = {}
     items = {}
-    weapons = []
     for i in range(1, 21):
         # name of a weapon = price (in XPATH values)
         XPATH_list[f"html/body/div[5]/div[1]/div[4]/div[1]/ul/li[{i}]/h3/a"] = (
@@ -138,9 +134,6 @@ def get_items(number_of_pages):
                 if b < c:
                     items[t] = price
         next_page(driver, i)
-        driver.implicitly_wait(
-            3
-        )  # Should use When ready or IsEnabled but it is for now
     save_items(items)
     driver.close()
     return items
