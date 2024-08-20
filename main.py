@@ -105,10 +105,10 @@ def setup():
 
 
 def save_items(items):
-    # open('file.txt', 'w').close() for clearing file
+    open('file.txt', 'w').close() #for clearing file
     f = open("items.txt", "a")
     for item, value in items.items():
-        f.write(item + " " + value + "\n")
+        f.write(item + " | " + value + "\n")
     f.close()
 
 
@@ -133,13 +133,10 @@ def get_items(number_of_pages):
                 items[t] = watch
             else:  # As items come with stickers already installed, they doesnt matter to me as i want minimal price for given weapon (item) so does the float value
                 price = find(driver, XPATH_list[xpath_name])
-                if price is not None:
-                    b = float(price[2:])
-                    c = float(items[t][2:])
-                    if b < c:
-                        items[t] = price
-                else:
-                    pass
+                b = float(price[2:])
+                c = float(items[t][2:])
+                if b < c:
+                    items[t] = price
         next_page(driver, i)
         driver.implicitly_wait(
             3
