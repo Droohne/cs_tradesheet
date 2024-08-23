@@ -1,274 +1,100 @@
-
-AK-47 | Case Hardened (Factory New) ¥ 5888
-AWP | Asiimov (Field-Tested) ¥ 930
-M4A4 | Asiimov (Field-Tested) ¥ 3600
-AK-47 | Vulcan (Battle-Scarred) ¥ 770
-AK-47 | Redline (Field-Tested) ¥ 699
-AK-47 | Case Hardened (Minimal Wear) ¥ 2900
-AK-47 | Case Hardened (Field-Tested) ¥ 3800
-M4A1-S | Nitro (Minimal Wear) ¥ 498
-AK-47 | Neon Rider (Field-Tested) ¥ 360
-AWP | Redline (Field-Tested) ¥ 9300
-StatTrak™ AK-47 | Redline (Field-Tested) ¥ 2500
-M4A1-S | Printstream (Field-Tested) ¥ 1300
-AK-47 | Slate (Factory New) ¥ 750
-M4A1-S | Printstream (Minimal Wear) ¥ 1919
-AK-47 | Fire Serpent (Field-Tested) ¥ 9688
-AK-47 | Bloodsport (Factory New) ¥ 1399
-StatTrak™ AK-47 | Vulcan (Minimal Wear) ¥ 8666.66
-AK-47 | Case Hardened (Factory New) | ¥ 5888
-AWP | Asiimov (Field-Tested) | ¥ 930
-M4A4 | Asiimov (Field-Tested) | ¥ 3600
-AK-47 | Vulcan (Battle-Scarred) | ¥ 770
-AK-47 | Redline (Field-Tested) | ¥ 160
-AK-47 | Case Hardened (Minimal Wear) | ¥ 1800
-AK-47 | Case Hardened (Field-Tested) | ¥ 1580
-M4A1-S | Nitro (Minimal Wear) | ¥ 498
-AK-47 | Neon Rider (Field-Tested) | ¥ 360
-AWP | Redline (Field-Tested) | ¥ 310
-StatTrak™ AK-47 | Redline (Field-Tested) | ¥ 400
-M4A1-S | Printstream (Field-Tested) | ¥ 1179.9
-AK-47 | Slate (Factory New) | ¥ 750
-M4A1-S | Printstream (Minimal Wear) | ¥ 1919
-AK-47 | Fire Serpent (Field-Tested) | ¥ 9688
-AK-47 | Bloodsport (Factory New) | ¥ 1399
-StatTrak™ AK-47 | Vulcan (Minimal Wear) | ¥ 8666.66
-AK-47 | Vulcan (Minimal Wear) | ¥ 3200
-AWP | Wildfire (Minimal Wear) | ¥ 550
-StatTrak™ AK-47 | Slate (Field-Tested) | ¥ 64
-AK-47 | Neon Rider (Factory New) | ¥ 1700
-AK-47 | Jaguar (Field-Tested) | ¥ 400
-M4A1-S | Icarus Fell (Factory New) | ¥ 3400
-AK-47 | Bloodsport (Minimal Wear) | ¥ 750
-M4A4 | Eye of Horus (Minimal Wear) | ¥ 2800
-M4A1-S | Printstream (Factory New) | ¥ 2915
-AK-47 | Red Laminate (Field-Tested) | ¥ 14000
-AK-47 | Redline (Minimal Wear) | ¥ 745
-StatTrak™ AK-47 | Blue Laminate (Factory New) | ¥ 460
-StatTrak™ AK-47 | Asiimov (Field-Tested) | ¥ 699
-SG 553 | Integrale (Minimal Wear) | ¥ 209
-AK-47 | Gold Arabesque (Factory New) | ¥ 33188
-AWP | Wildfire (Field-Tested) | ¥ 399
-AK-47 | Asiimov (Minimal Wear) | ¥ 400
-M4A4 | Evil Daimyo (Factory New) | ¥ 125
-AK-47 | Vulcan (Factory New) | ¥ 5150
-M4A1-S | Golden Coil (Field-Tested) | ¥ 370
-StatTrak™ AK-47 | Fire Serpent (Minimal Wear) | ¥ 33500
-AK-47 | Vulcan (Field-Tested) | ¥ 1600
-M4A1-S | Mecha Industries (Field-Tested) | ¥ 320
-AK-47 | Fuel Injector (Minimal Wear) | ¥ 3400
-AK-47 | Asiimov (Field-Tested) | ¥ 204.5
-M4A4 | Temukau (Factory New) | ¥ 760
-AK-47 | Case Hardened (Well-Worn) | ¥ 1218
-StatTrak™ AK-47 | Nightwish (Field-Tested) | ¥ 140
-AK-47 | Aquamarine Revenge (Minimal Wear) | ¥ 439
-StatTrak™ AK-47 | Slate (Minimal Wear) | ¥ 110
-AWP | Atheris (Minimal Wear) | ¥ 35.5
-AWP | Sun in Leo (Factory New) | ¥ 240
-M4A1-S | Hot Rod (Factory New) | ¥ 6470.1
-AK-47 | Slate (Well-Worn) | ¥ 30
-M4A4 | Poseidon (Factory New) | ¥ 8399
-M4A1-S | Nightmare (Field-Tested) | ¥ 80.19
-M4A1-S | Black Lotus (Minimal Wear) | ¥ 118
-StatTrak™ M4A4 | Temukau (Field-Tested) | ¥ 149
-AK-47 | Elite Build (Well-Worn) | ¥ 50
-AK-47 | Inheritance (Minimal Wear) | ¥ 720
-AWP | Dragon Lore (Minimal Wear) | ¥ 62398
-M4A1-S | Black Lotus (Field-Tested) | ¥ 95
-StatTrak™ AK-47 | Blue Laminate (Field-Tested) | ¥ 188
-AK-47 | Nightwish (Minimal Wear) | ¥ 136.99
-AK-47 | Inheritance (Factory New) | ¥ 1249.98
-AK-47 | Blue Laminate (Field-Tested) | ¥ 2900
-AK-47 | Slate (Field-Tested) | ¥ 29.99
-StatTrak™ AWP | Lightning Strike (Factory New) | ¥ 7499
-M4A1-S | Cyrex (Field-Tested) | ¥ 186
-M4A4 | X-Ray (Minimal Wear) | ¥ 123.37
-AK-47 | Blue Laminate (Minimal Wear) | ¥ 460
-StatTrak™ AK-47 | Blue Laminate (Minimal Wear) | ¥ 2488
-M4A1-S | Cyrex (Minimal Wear) | ¥ 198.77
-AWP | Man-o'-war (Minimal Wear) | ¥ 390
-AWP | Fade (Factory New) | ¥ 7688
-AK-47 | Inheritance (Field-Tested) | ¥ 444.99
-AK-47 | Aquamarine Revenge (Field-Tested) | ¥ 407.11
-StatTrak™ M4A4 | Faded Zebra (Field-Tested) | ¥ 4588
-AK-47 | Point Disarray (Factory New) | ¥ 400
-AWP | BOOM (Minimal Wear) | ¥ 918
-StatTrak™ AK-47 | Elite Build (Field-Tested) | ¥ 185
-AK-47 | Case Hardened (Factory New) | ¥ 2487
-AWP | Asiimov (Field-Tested) | ¥ 875
-M4A4 | Asiimov (Field-Tested) | ¥ 1088
-AK-47 | Vulcan (Battle-Scarred) | ¥ 770
-AK-47 | Redline (Field-Tested) | ¥ 145
-AK-47 | Case Hardened (Minimal Wear) | ¥ 1800
-AK-47 | Case Hardened (Field-Tested) | ¥ 1520
-M4A1-S | Nitro (Minimal Wear) | ¥ 200
-AK-47 | Neon Rider (Field-Tested) | ¥ 294.3
-AWP | Redline (Field-Tested) | ¥ 279
-StatTrak™ AK-47 | Redline (Field-Tested) | ¥ 360
-M4A1-S | Printstream (Field-Tested) | ¥ 699
-AK-47 | Slate (Factory New) | ¥ 145
-M4A1-S | Printstream (Minimal Wear) | ¥ 1769
-AK-47 | Fire Serpent (Field-Tested) | ¥ 9688
-AK-47 | Bloodsport (Factory New) | ¥ 887.5
-StatTrak™ AK-47 | Vulcan (Minimal Wear) | ¥ 8666.66
-AK-47 | Case Hardened (Battle-Scarred) | ¥ 186
-AK-47 | Red Laminate (Field-Tested) | ¥ 300
-AK-47 | Neon Revolution (Minimal Wear) | ¥ 275
-AK-47 | Wild Lotus (Factory New) | ¥ 2000000
-AWP | Redline (Minimal Wear) | ¥ 490
-M4A1-S | Atomic Alloy (Minimal Wear) | ¥ 435
-AK-47 | Vulcan (Minimal Wear) | ¥ 3199
-M4A4 | Eye of Horus (Factory New) | ¥ 3904.5
-StatTrak™ AK-47 | Vulcan (Factory New) | ¥ 18100
-StatTrak™ AWP | Lightning Strike (Factory New) | ¥ 7488
-AK-47 | Redline (Minimal Wear) | ¥ 21.62
-StatTrak™ AK-47 | Frontside Misty (Minimal Wear) | ¥ 600
-M4A1-S | Bright Water (Minimal Wear) | ¥ 3400
-StatTrak™ AK-47 | Bloodsport (Minimal Wear) | ¥ 5800
-AK-47 | Inheritance (Factory New) | ¥ 950
-AWP | Elite Build (Field-Tested) | ¥ 110
-AK-47 | Aquamarine Revenge (Minimal Wear) | ¥ 439
-AWP | Gungnir (Factory New) | ¥ 160000
-StatTrak™ AK-47 | Blue Laminate (Minimal Wear) | ¥ 400
-AK-47 | Blue Laminate (Minimal Wear) | ¥ 460
-AWP | Graphite (Factory New) | ¥ 1300
-AK-47 | Fuel Injector (Field-Tested) | ¥ 1044
-AK-47 | Leet Museo (Minimal Wear) | ¥ 305
-AK-47 | Inheritance (Minimal Wear) | ¥ 149
-M4A1-S | Guardian (Minimal Wear) | ¥ 160
-M4A4 | Buzz Kill (Minimal Wear) | ¥ 315
-M4A4 | The Emperor (Minimal Wear) | ¥ 1111
-M4A1-S | Guardian (Factory New) | ¥ 230
-AK-47 | Ice Coaled (Factory New) | ¥ 152
-M4A1-S | Printstream (Factory New) | ¥ 2915
-AK-47 | Bloodsport (Minimal Wear) | ¥ 135.37
-M4A4 | Urban DDPAT (Minimal Wear) | ¥ 4500
-StatTrak™ AK-47 | Inheritance (Field-Tested) | ¥ 2499
-AK-47 | Red Laminate (Minimal Wear) | ¥ 3188
-AK-47 | Cartel (Field-Tested) | ¥ 65
-AK-47 | Asiimov (Field-Tested) | ¥ 204.5
-AK-47 | The Empress (Field-Tested) | ¥ 220
-AK-47 | Fuel Injector (Factory New) | ¥ 6000
-M4A1-S | Icarus Fell (Factory New) | ¥ 3391.5
-M4A1-S | Dark Water (Minimal Wear) | ¥ 2600
-M4A1-S | Boreal Forest (Minimal Wear) | ¥ 2888
-AK-47 | Black Laminate (Field-Tested) | ¥ 495
-StatTrak™ M4A4 | Magnesium (Minimal Wear) | ¥ 115
-AWP | Neo-Noir (Factory New) | ¥ 222.22
-StatTrak™ AK-47 | Redline (Minimal Wear) | ¥ 2680
-AWP | Man-o'-war (Minimal Wear) | ¥ 211.11
-AK-47 | Blue Laminate (Factory New) | ¥ 84
-AK-47 | Aquamarine Revenge (Field-Tested) | ¥ 240
-AWP | Wildfire (Minimal Wear) | ¥ 550
-StatTrak™ AK-47 | Slate (Field-Tested) | ¥ 64
-AK-47 | Neon Rider (Factory New) | ¥ 1700
-AK-47 | Jaguar (Field-Tested) | ¥ 400
-M4A4 | Eye of Horus (Minimal Wear) | ¥ 845
-M4A1-S | Golden Coil (Field-Tested) | ¥ 370
-StatTrak™ AK-47 | Blue Laminate (Factory New) | ¥ 400
-StatTrak™ AK-47 | Asiimov (Field-Tested) | ¥ 699
-SG 553 | Integrale (Minimal Wear) | ¥ 209
-AK-47 | Gold Arabesque (Factory New) | ¥ 33188
-AWP | Wildfire (Field-Tested) | ¥ 399
-AK-47 | Asiimov (Minimal Wear) | ¥ 400
-M4A4 | Evil Daimyo (Factory New) | ¥ 125
-AK-47 | Vulcan (Factory New) | ¥ 5150
-StatTrak™ AK-47 | Nightwish (Field-Tested) | ¥ 140
-StatTrak™ AK-47 | Fire Serpent (Minimal Wear) | ¥ 33500
-AK-47 | Vulcan (Field-Tested) | ¥ 1589
-M4A1-S | Mecha Industries (Field-Tested) | ¥ 195
-AK-47 | Fuel Injector (Minimal Wear) | ¥ 3400
-M4A4 | Temukau (Factory New) | ¥ 696
-AK-47 | Case Hardened (Well-Worn) | ¥ 1218
-AWP | Safari Mesh (Battle-Scarred) | ¥ 188.88
-StatTrak™ AK-47 | Elite Build (Field-Tested) | ¥ 76
-AWP | Asiimov (Well-Worn) | ¥ 660
-M4A1-S | Cyrex (Minimal Wear) | ¥ 162.9
-AWP | Desert Hydra (Field-Tested) | ¥ 11200
-M4A1-S | Player Two (Field-Tested) | ¥ 145
-AK-47 | Slate (Field-Tested) | ¥ 21.62
-M4A1-S | Printstream (Battle-Scarred) | ¥ 825
-AK-47 | Nightwish (Factory New) | ¥ 465
-AWP | Chrome Cannon (Field-Tested) | ¥ 308
-AK-47 | Head Shot (Factory New) | ¥ 620
-StatTrak™ M4A1-S | Printstream (Field-Tested) | ¥ 1799.88
-M4A1-S | Player Two (Minimal Wear) | ¥ 360
-AK-47 | Blue Laminate (Well-Worn) | ¥ 399
-Souvenir M4A4 | Urban DDPAT (Field-Tested) | ¥ 31
-AK-47 | Blue Laminate (Field-Tested) | ¥ 320
-AK-47 | Point Disarray (Minimal Wear) | ¥ 105
-AK-47 | Frontside Misty (Factory New) | ¥ 570
-AK-47 | Bloodsport (Field-Tested) | ¥ 695
-StatTrak™ M4A1-S | Printstream (Factory New) | ¥ 83500
-AK-47 | Elite Build (Well-Worn) | ¥ 50
-StatTrak™ AK-47 | Slate (Minimal Wear) | ¥ 107
-AWP | Atheris (Minimal Wear) | ¥ 35.5
-AWP | Sun in Leo (Factory New) | ¥ 240
-M4A1-S | Hot Rod (Factory New) | ¥ 6470.1
-AK-47 | Slate (Well-Worn) | ¥ 30
-M4A4 | Poseidon (Factory New) | ¥ 8399
-M4A1-S | Nightmare (Field-Tested) | ¥ 80.19
-M4A1-S | Black Lotus (Minimal Wear) | ¥ 106.65
-Souvenir M4A4 | Tornado (Battle-Scarred) | ¥ 55
-AK-47 | Cartel (Minimal Wear) | ¥ 95
-AK-47 | Fire Serpent (Minimal Wear) | ¥ 60888
-M4A4 | X-Ray (Minimal Wear) | ¥ 99.99
-M4A1-S | Cyrex (Field-Tested) | ¥ 160
-AK-47 | The Empress (Well-Worn) | ¥ 179
-M4A1-S | Mecha Industries (Minimal Wear) | ¥ 700
-StatTrak™ AK-47 | Cartel (Minimal Wear) | ¥ 360
-M4A1-S | Nightmare (Minimal Wear) | ¥ 125.5
-AK-47 | Head Shot (Minimal Wear) | ¥ 200
-AWP | Chrome Cannon (Battle-Scarred) | ¥ 178
-AK-47 | Slate (Battle-Scarred) | ¥ 88
-AK-47 | X-Ray (Factory New) | ¥ 13600
-AK-47 | Nightwish (Field-Tested) | ¥ 89.91
-M4A1-S | Atomic Alloy (Field-Tested) | ¥ 314
-StatTrak™ AK-47 | Blue Laminate (Field-Tested) | ¥ 186
-AK-47 | Wasteland Rebel (Minimal Wear) | ¥ 320
-M4A4 | Asiimov (Battle-Scarred) | ¥ 420
-AWP | Dragon Lore (Minimal Wear) | ¥ 62398
-M4A1-S | Black Lotus (Field-Tested) | ¥ 95
-AK-47 | Nightwish (Minimal Wear) | ¥ 136.99
-StatTrak™ AWP | Exoskeleton (Field-Tested) | ¥ 200
-StatTrak™ AK-47 | Case Hardened (Minimal Wear) | ¥ 4299
-Galil AR | Eco (Minimal Wear) | ¥ 217
-AWP | Man-o'-war (Field-Tested) | ¥ 205.5
-AK-47 | Hydroponic (Minimal Wear) | ¥ 9390
-M4A4 | Neo-Noir (Minimal Wear) | ¥ 699
-StatTrak™ AK-47 | Fuel Injector (Field-Tested) | ¥ 2050
-M4A4 | Bullet Rain (Field-Tested) | ¥ 135
-FAMAS | Rapid Eye Movement (Field-Tested) | ¥ 7.98
-AK-47 | Ice Coaled (Minimal Wear) | ¥ 65.77
-StatTrak™ AUG | Fleet Flock (Factory New) | ¥ 250
-M4A4 | Faded Zebra (Minimal Wear) | ¥ 397
-M4A4 | Desert Storm (Field-Tested) | ¥ 600
-M4A4 | Hellfire (Minimal Wear) | ¥ 282.38
-Galil AR | Eco (Field-Tested) | ¥ 63
-M4A1-S | Leaded Glass (Field-Tested) | ¥ 26
-AK-47 | Frontside Misty (Field-Tested) | ¥ 126
-StatTrak™ AWP | Containment Breach (Field-Tested) | ¥ 1240
-StatTrak™ AK-47 | Elite Build (Minimal Wear) | ¥ 65
-M4A1-S | Moss Quartz (Minimal Wear) | ¥ 289
-AWP | BOOM (Minimal Wear) | ¥ 788.88
-AWP | Fade (Factory New) | ¥ 7688
-AK-47 | Inheritance (Field-Tested) | ¥ 444.99
-StatTrak™ M4A4 | Faded Zebra (Field-Tested) | ¥ 4588
-AK-47 | Point Disarray (Factory New) | ¥ 400
-M4A1-S | Decimator (Minimal Wear) | ¥ 135
-AWP | Atheris (Well-Worn) | ¥ 14.31
-Souvenir AWP | Desert Hydra (Field-Tested) | ¥ 10700
-AK-47 | Orbit Mk01 (Minimal Wear) | ¥ 125
-AWP | Asiimov (Battle-Scarred) | ¥ 530
-M4A1-S | Black Lotus (Factory New) | ¥ 234.79
-M4A4 | Temukau (Minimal Wear) | ¥ 360
-StatTrak™ AWP | Exoskeleton (Minimal Wear) | ¥ 98
-M4A4 | Cyber Security (Factory New) | ¥ 308
-AWP | Chrome Cannon (Well-Worn) | ¥ 178.9
-AK-47 | Slate (Minimal Wear) | ¥ 35.78
-M4A1-S | Cyrex (Factory New) | ¥ 315
-AWP | Lightning Strike (Factory New) | ¥ 3646
-AK-47 | Green Laminate (Factory New) | ¥ 167.83
-AK-47 | Aquamarine Revenge (Well-Worn) | ¥ 130.99
-SCAR-20 | Sand Mesh (Battle-Scarred) | ¥ 125
-AK-47 | Neon Rider (Minimal Wear) | ¥ 543
+AK-47 | Green Laminate | Factory New | 1906.88
+AK-47 | Green Laminate | Minimal Wear | 1340.56
+AK-47 | Green Laminate | Field-Tested | 1436.39
+AK-47 | Green Laminate | Well-Worn | 3449.63
+AK-47 | Neon Revolution | Factory New | 6779.48
+AK-47 | Neon Revolution | Minimal Wear | 2814.32
+AK-47 | Neon Revolution | Field-Tested | 1274.45
+AK-47 | Neon Revolution | Well-Worn | 1669.24
+StatTrak™ AK-47 | Ice Coaled | Factory New | 4166.38
+StatTrak™ AK-47 | Ice Coaled | Minimal Wear | 1819.68
+StatTrak™ AK-47 | Ice Coaled | Field-Tested | 909.36
+StatTrak™ AK-47 | Ice Coaled | Well-Worn | 1146.04
+StatTrak™ AK-47 | Slate | Factory New | 3107.54
+StatTrak™ AK-47 | Slate | Minimal Wear | 1341.52
+StatTrak™ AK-47 | Slate | Field-Tested | 920.86
+StatTrak™ AK-47 | Slate | Well-Worn | 795.33
+AK-47 | Point Disarray | Factory New | 2806.66
+AK-47 | Point Disarray | Minimal Wear | 1245.7
+AK-47 | Point Disarray | Field-Tested | 948.65
+AK-47 | Point Disarray | Well-Worn | 857.62
+AK-47 | Blue Laminate | Factory New | 1111.55
+AK-47 | Blue Laminate | Minimal Wear | 976.44
+AK-47 | Blue Laminate | Field-Tested | 953.44
+AK-47 | Blue Laminate | Well-Worn | 1179.58
+AK-47 | Frontside Misty | Factory New | 5844.24
+AK-47 | Frontside Misty | Minimal Wear | 1975.87
+AK-47 | Frontside Misty | Field-Tested | 1005.18
+AK-47 | Frontside Misty | Well-Worn | 1054.05
+AK-47 | Orbit Mk01 | Factory New | 1915.5
+AK-47 | Orbit Mk01 | Minimal Wear | 1303.19
+AK-47 | Orbit Mk01 | Field-Tested | 1028.18
+AK-47 | Orbit Mk01 | Well-Worn | 1304.15
+AK-47 | Head Shot | Factory New | 4949.26
+AK-47 | Head Shot | Minimal Wear | 1526.46
+AK-47 | Head Shot | Field-Tested | 813.54
+AK-47 | Head Shot | Well-Worn | 522.24
+AK-47 | Cartel | Factory New | 2197.22
+AK-47 | Cartel | Minimal Wear | 1081.84
+AK-47 | Cartel | Field-Tested | 814.5
+AK-47 | Cartel | Well-Worn | 1724.81
+StatTrak™ AK-47 | Phantom Disruptor | Factory New | 2683.04
+StatTrak™ AK-47 | Phantom Disruptor | Minimal Wear | 1485.26
+StatTrak™ AK-47 | Phantom Disruptor | Field-Tested | 834.62
+StatTrak™ AK-47 | Phantom Disruptor | Well-Worn | 1336.73
+AK-47 | Nightwish | Factory New | 4599.5
+AK-47 | Nightwish | Minimal Wear | 1721.94
+AK-47 | Nightwish | Field-Tested | 728.25
+AK-47 | Nightwish | Well-Worn | 556.73
+AK-47 | Baroque Purple | Factory New | 1533.17
+AK-47 | Baroque Purple | Minimal Wear | 613.27
+AK-47 | Baroque Purple | Field-Tested | 587.39
+AK-47 | Baroque Purple | Well-Worn | 640.1
+AK-47 | Jungle Spray | Factory New | 11977.88
+AK-47 | Jungle Spray | Minimal Wear | 1148.92
+AK-47 | Jungle Spray | Field-Tested | 531.82
+AK-47 | Jungle Spray | Well-Worn | 650.64
+AK-47 | Safety Net | Factory New | 593.14
+AK-47 | Safety Net | Minimal Wear | 383.29
+AK-47 | Safety Net | Field-Tested | 266.39
+AK-47 | Safety Net | Well-Worn | 295.13
+AK-47 | Rat Rod | Factory New | 862.41
+AK-47 | Rat Rod | Minimal Wear | 756.04
+AK-47 | Rat Rod | Field-Tested | 300.88
+AK-47 | Rat Rod | Well-Worn | 262.56
+AK-47 | Phantom Disruptor | Factory New | 828.87
+AK-47 | Phantom Disruptor | Minimal Wear | 489.66
+AK-47 | Phantom Disruptor | Field-Tested | 311.42
+AK-47 | Phantom Disruptor | Well-Worn | 423.54
+StatTrak™ AK-47 | Elite Build | Factory New | 2030.49
+StatTrak™ AK-47 | Elite Build | Minimal Wear | 557.69
+StatTrak™ AK-47 | Elite Build | Field-Tested | 325.8
+StatTrak™ AK-47 | Elite Build | Well-Worn | 264.47
+AK-47 | Legion of Anubis | Factory New | 1266.78
+AK-47 | Legion of Anubis | Minimal Wear | 670.76
+AK-47 | Legion of Anubis | Field-Tested | 467.62
+AK-47 | Legion of Anubis | Well-Worn | 527.03
+AK-47 | Ice Coaled | Factory New | 1340.56
+AK-47 | Ice Coaled | Minimal Wear | 765.63
+AK-47 | Ice Coaled | Field-Tested | 447.49
+AK-47 | Ice Coaled | Well-Worn | 503.07
+AK-47 | Emerald Pinstripe | Factory New | 899.78
+AK-47 | Emerald Pinstripe | Minimal Wear | 423.54
+AK-47 | Emerald Pinstripe | Field-Tested | 229.98
+AK-47 | Emerald Pinstripe | Well-Worn | 236.68
+AK-47 | Slate | Factory New | 903.61
+AK-47 | Slate | Minimal Wear | 366.04
+AK-47 | Slate | Field-Tested | 213.69
+AK-47 | Slate | Well-Worn | 200.27
+StatTrak™ AK-47 | Uncharted | Factory New | 631.47
+StatTrak™ AK-47 | Uncharted | Minimal Wear | 198.35
+StatTrak™ AK-47 | Uncharted | Field-Tested | 157.15
+StatTrak™ AK-47 | Uncharted | Well-Worn | 286.51
+AK-47 | Steel Delta | Factory New | 216.56
+AK-47 | Steel Delta | Minimal Wear | 137.03
+AK-47 | Steel Delta | Field-Tested | 109.24
+AK-47 | Steel Delta | Well-Worn | 171.52
+AK-47 | Elite Build | Factory New | 473.37
+AK-47 | Elite Build | Minimal Wear | 165.77
+AK-47 | Elite Build | Field-Tested | 105.41
+AK-47 | Elite Build | Well-Worn | 81.45
