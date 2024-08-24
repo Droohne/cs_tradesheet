@@ -8,7 +8,7 @@ Modify **json_manipulations.py** to match your needs or any other way to change 
 
 ## Format of .json file
 
-My code will result in a **1-liner** .json file auto-format it to make it human readable.
+My code will result in a **1-liner** .json file: Auto-format it to make it human readable.
 
 # Speed of programm
 
