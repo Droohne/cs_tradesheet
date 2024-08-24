@@ -1,92 +1,80 @@
-from selenium import webdriver
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
-from requests import get
+import requests
 import json
 import time
 import random
 
 # TODO if using API you can only get lowest buy order price (from skins to cash)
 # see example https://buff.163.com/api/market/goods/buy_order?game=csgo&goods_id=34306
-
+# TODO use this instead https://buff.163.com/api/market/goods/sell_order?game=csgo&goods_id=33811
 # TODO see in network page (GET - requests) try to ask server to get items instead of using selenium
 
-# TODO I want to using requests instead of selenium. Handling dynamic content will make it much faster (i guess?)
 
 
 def convert_CNY_RUB():
-    req_json = get("https://api.exchangerate-api.com/v4/latest/CNY").json()
+    req_json = requests.get("https://api.exchangerate-api.com/v4/latest/CNY").json()
     CNY_TO_RUB = req_json["rates"]["RUB"]
     return CNY_TO_RUB
 
-
-def find(driver, element_XPATH):
-    try:
-        v = driver.find_element(By.XPATH, element_XPATH).text
-        if v is not None:
-            return v
-    except:
-        pass
-    return find(driver, element_XPATH)
-
-
-def setup():
-    opts = webdriver.FirefoxOptions()
-    #opts.add_argument("--headless")
-    serv = webdriver.FirefoxService(executable_path="/snap/bin/geckodriver")
-    driver = webdriver.Firefox(options=opts, service=serv)
-    driver.implicitly_wait(5)
-    return driver
-
-
 def save_items(items):
-    js = json.dumps(items)
-    with open("result.json", "w") as f:
-        for c in js:
-            f.write(c)
+    with open("sample.json", "w") as outfile: 
+        json.dump(items, outfile)
 
 
-def get_quality_XPATH(item_name): # redo this later
-    with open("amounts.json", "r") as aj:
-        d = json.load(aj)
-        amount = d[item_name] + 1
-        xpath_list = []
-        for i in range(1, amount):
-            xpath_list.append(f"/html/body/div[6]/div/div[2]/div/a[{i}]")
-    return xpath_list
+def get_items(number_of_items):
+    CNY_RUB_price = convert_CNY_RUB() #without commision
+    base_string = "https://buff.163.com/api/market/goods/sell_order?game=csgo&goods_id="
+    item_id = 1
+    dataset = {}
+    with open("fixed_items.json") as jf:
+        data = json.load(jf)
+        quality_json_template = {
+            "buff163_id": None,
+            "price": None,
+            "steam_price": None,
+            "steam_trade_volume": None,
+            "buff163_amount_of_sell_offers": None,
+            "buff163_amount_of_buy_offers": None
+        }
+        for name in data:            
+            time.sleep(random.random() + 0.5) # without this at a 100 or so ids will get To Many Requests
+            id = data[name]
+            s = base_string+f"{id}"
+            req = requests.get(s)
+            req_weapon = req.json()
+            if len(req_weapon["data"]["goods_infos"]) > 0:
+                name_quality = req_weapon["data"]["goods_infos"][f"{id}"]["market_hash_name"] # this should give eng name
+                value = round(float(req_weapon["data"]["items"][0]["price"])*CNY_RUB_price, 2)
+                skin_name = name_quality.split(' (')[0]
+                quality = name_quality.split(' (')[1][:-1]
+                steam_price = float(req_weapon["data"]["goods_infos"][f"{id}"]["steam_price_cny"])*CNY_RUB_price
+            else:
+                continue
+            quality_json = {}
+            quality_json["price"] = value
+            quality_json["steam_price"] = round(steam_price, 2)
+            quality_json["buff163_id"] = id
+            #other field will be None till i find a way to fill them (or delete them)
 
+            if skin_name in dataset:
+                dataset[skin_name][quality] = quality_json
+            else:
 
-def get_items():
-    #fuck it. use this instead https://buff.163.com/api/market/goods/sell_order?game=csgo&goods_id=33811
-    CNY_RUB_price = convert_CNY_RUB() * 1.02  # with site commision
-    base_string = "https://buff.163.com/goods/"
-    items = {}
-    driver = setup()
-    with open("ready_to_use_items.json", "r") as ready_json:
-        d = json.load(ready_json)
-        for name in d:
-            items[name] = []
-            xpath_quality_list = get_quality_XPATH(name)
-            s = base_string + str(d[name])
-            driver.get(s)
-            time.sleep(random.random() + 1.5)
-            for xpath in xpath_quality_list:
-                #somewhere here i also need to store "amount of selled" from sell button.
-                quality_value = find(driver, xpath).split(" ¥ ")
-                if len(quality_value) == 1:
-                    continue 
-                    # no items variation (Which means no price) so len == 1             
-                items[name].append(
-                    (quality_value[0], float("{:.2f}".format(float(quality_value[1]) * CNY_RUB_price)))
-                )
-    save_items(items)
-    driver.close()
-
+                json_item = {
+                    "id" : item_id,
+                    quality: quality_json
+                }
+                dataset[skin_name] = json_item
+            
+            item_id+=1
+            if item_id > number_of_items:
+                break
+    save_items(dataset)
 
 if __name__ == "__main__":
     full_st = time.time()
-    get_items()
+    get_items(300)
     full_et = time.time()
     full_time = full_et - full_st
     print("full exec time is = ", full_time)
+
+
