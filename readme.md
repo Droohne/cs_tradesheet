@@ -4,7 +4,7 @@ Use this [link](https://github.com/ModestSerhat/cs2-marketplace-ids/tree/main) a
 
 ## Adding items or changing fixed_items
 
-Modify ** json_manipulations.py ** to match your needs or any other way to change initial pack of IDs. Make sure structure of **fixed_items.json** is not changed
+Modify **json_manipulations.py** to match your needs or any other way to change initial pack of IDs. Make sure structure of **fixed_items.json** is not changed
 
 ## Format of .json file
 
