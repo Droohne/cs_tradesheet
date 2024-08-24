@@ -72,7 +72,7 @@ def get_items(number_of_items):
 
 if __name__ == "__main__":
     full_st = time.time()
-    get_items(300)
+    get_items(500)
     full_et = time.time()
     full_time = full_et - full_st
     print("full exec time is = ", full_time)

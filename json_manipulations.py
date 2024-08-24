@@ -9,10 +9,11 @@ def expression_parse_1(line):
             return True
     return False    
 
+
 def write_only_needed():
     with open("items_id.json", "w") as f:
         start_writing = True
-        base_json =  open("cs2_marketplaceids.json").read().splitlines()
+        base_json =  open("cs2_marketplaceids.json", "r").read().splitlines()
         for line in base_json:
             if "}," in line and start_writing:
                 f.write(line + '\n')
@@ -20,6 +21,7 @@ def write_only_needed():
             elif start_writing or expression_parse_1(line):
                 f.write(line + '\n')
                 start_writing = True
+
 
 def delete_youpin_id():
     with open("items_id.json", "r") as f:
@@ -31,6 +33,7 @@ def delete_youpin_id():
                     file.write(line[:-2]) # trim line. Deleted charachers are ", "
                 else:
                     file.write(line)  
+
 
 if __name__ == "__main__":
     #write_only_needed()
