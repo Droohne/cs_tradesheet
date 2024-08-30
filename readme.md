@@ -1,16 +1,12 @@
-### Where to get items id
+# Where to get items id
 
-Use this [link](https://github.com/ModestSerhat/cs2-marketplace-ids/tree/main) and download items_id from here
+Use this [link](https://github.com/ModestSerhat/cs2-marketplace-ids/tree/main) and download items id from here
 
-## Adding items or changing fixed_items
+## Adding items or changing them
 
-Modify **json_manipulations.py** to match your needs or any other way to change initial pack of IDs. Make sure structure of **fixed_items.json** is not changed
+Modify **json_manipulations.py** to match your needs or any other way to change initial pack of IDs.
+Lauch **json_manipulations.py** before **main.py**
 
-## Format of .json file
+## MySQL
 
-My code will result in a **1-liner** .json file: Auto-format it to make it human readable.
-
-# Speed of programm
-
-W/o time.sleep() it makes 1 iteration per 1 seconds on my end. With time.sleep() it takes close to 2 seconds time per iteration.
-**Disabling time.sleep() or redusing time sleept will eventually result in getting "TO MANY REQUESTS"**
+Make sure MySQL is installed and up-n-running before launching **main.py**
