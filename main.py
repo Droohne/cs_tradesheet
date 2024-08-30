@@ -1,115 +1,97 @@
-import requests
 import json
 import time
 import random
-import json_manipulations
-from os import environ
-# TODO if using API you can only get lowest buy order price (from skins to cash)
-# see example https://buff.163.com/api/market/goods/buy_order?game=csgo&goods_id=34306
-# TODO use this instead https://buff.163.com/api/market/goods/sell_order?game=csgo&goods_id=33811
-# TODO see in network page (GET - requests) try to ask server to get items instead of using selenium
+import mysql.connector
+import datetime
+import os
+from requests import get
 
 
 def convert_to_RUB(currency_acronym_name):
-    req_json = requests.get(f"https://api.exchangerate-api.com/v4/latest/{currency_acronym_name}").json()
+    req_json = get(
+        f"https://api.exchangerate-api.com/v4/latest/{currency_acronym_name}"
+    ).json()
     in_rub = req_json["rates"]["RUB"]
     return in_rub
 
 
-def get_items_steam_API(API_key):
-    req_json = requests.get(f"https://www.steamwebapi.com/steam/api/items?key={API_key}").json()
-    json_manipulations.write_json(req_json, "steam_api.json")
+def make_requests(link):
+    req_json = None
+    base_time = random.random() + 0.7
+    while req_json is None:
+        time.sleep(base_time)
+        req = get(link)
+        req_json = req.json()
+        if req_json is None:
+            print(f"Empty link {link}")
+    return req_json
 
 
-def get_additional_data(item, wear):
-    with open("steam_result.json", "r") as steam_json:
-        data = json.load(steam_json)
-        try:
-            return data[item.lower()][wear]
-        except:
-            empty_data = {
-                "skinname": None,
-                "skin_wear": None,
-                "pricelatest": None,
-                "pricelatestsell": None,
-                "priceupdatedat": None,
-                "pricemin": None,
-                "pricereal": None,
-                "pricereal24h": None,
-                "offervolume": None,
-                "sold24h": None,
-                "sold7d": None,
-                "updatedat": None,
-            }
-            return empty_data
-
-
-def get_wear_acronym(wear):
-    line = ""
-    if wear.lower() == "factory new":
-        line = "fn"
-    elif wear.lower() == "battle-scarred":
-        line = "bs"
-    elif wear.lower() == "minimal wear":
-        line = "mw"
-    elif wear.lower() == "field-tested":
-        line = "ft"
+def sql_query(db, cursor, vals):
+    # vals will be all columns in table exept id
+    find_query = f"SELECT ID FROM items WHERE skin_name = '{vals[0]}' AND skin_wear = '{vals[1]}'"
+    cursor.execute(find_query)
+    res = cursor.fetchall()
+    if len(res) == 0:
+        query = "INSERT INTO items (skin_name, skin_wear, buff163_price, steam_real_price, date_time) VALUES (%s, %s, %s, %s, %s)"
+        val = (vals[0], vals[1], vals[2], vals[3], vals[4])
+        # print(f"id not found: {vals[0]} {vals[1]} {vals[2]} {vals[3]} {vals[4]}")
     else:
-        line = "ww"
-    return line
+        # res[0] has value of (1,)
+        query = "REPLACE INTO items (id, skin_name, skin_wear, buff163_price, steam_real_price, date_time) VALUES (%s, %s, %s, %s, %s, %s)"
+        val = (res[0][0], vals[0], vals[1], vals[2], vals[3], vals[4])
+        # print(f"id found: {myresult[0][0]} {vals[0]} {vals[1]} {vals[2]} {vals[3]} {vals[4]}")
+    cursor.execute(query, val)
+    db.commit()
 
 
 def get_items():
-    CNY_RUB_price = convert_to_RUB("CNY")  # without commision
-    base_string = "https://buff.163.com/api/market/goods/sell_order?game=csgo&goods_id="
+    db = mysql.connector.connect(
+        host = os.environ.get("HOST"),
+        database = os.environ.get("MYSQL_DATABASE"),
+        user = os.environ.get("MYSQL_USER"),
+        password = os.environ.get("MYSQL_PASSWORD"),
+        port = os.environ.get("MYSQL_PORT"),
+    )
+    mycursor = db.cursor()
+
+    steam_price_fees_mult = 0.86956521739
+    CNY_price = convert_to_RUB("CNY") * 1.02 # with commision
+
+    base_link = "https://buff.163.com/api/market/goods/sell_order?game=csgo&goods_id="
     item_id = 1
-    dataset = {}
-    with open("fixed_items.json") as jf:
-        data = json.load(jf)  # 2690 items in there
+    with open("finally_fixed_items.json") as jf:
+        data = json.load(jf)
         for name in data:
-            time.sleep(random.random() + 0.5)  
-            # without this at a 100 or so ids will get To Many Requests
             id = data[name]
-            s = base_string + f"{id}"
-            #extracting info from API on each and every weapon skin
-            req = requests.get(s)
-            req_weapon = req.json()
-            if len(req_weapon["data"]["goods_infos"]) > 0:
-                name_wear = req_weapon["data"]["goods_infos"][f"{id}"]["market_hash_name"]
-                value = round(float(req_weapon["data"]["items"][0]["price"]) * CNY_RUB_price, 2)
-                skin_name = name_wear.split(" (")[0] # wrong result on M4A4 | 龍王 (Dragon King) 
-                wear = get_wear_acronym(name_wear.split(" (")[1][:-1])
-                steam_price = float(req_weapon["data"]["goods_infos"][f"{id}"]["steam_price_cny"]) * CNY_RUB_price
-            else:
+            s = base_link + f"{id}"
+            # extracting info from API on each and every weapon skin
+            req = make_requests(s)
+            if len(req["data"]["goods_infos"]) > 0:
+                name_wear = req["data"]["goods_infos"][f"{id}"]["market_hash_name"]
+                value = round(float(req["data"]["items"][0]["price"]) * CNY_price, 2)
+                # find index of last opening ( so skins with multiple ( in it will parse correctly
+                # FE this skin M4A4 | 龍王 (Dragon King) (Well-Worn)
+                index_of_last_parentesis = name_wear.rfind("(")
+                skin_name = name_wear[:index_of_last_parentesis]
+                wear = name_wear[index_of_last_parentesis + 1 : -1]
+                steam_price = (
+                    float(req["data"]["goods_infos"][f"{id}"]["steam_price_cny"])
+                    * CNY_price
+                )
+
+            if round(steam_price * steam_price_fees_mult, 2) <= value or "'" in name:
+                # If somehow buy - sell will be non-profit
+                # "'" exluded to not break sql query
                 continue
-            
-            # "Helper" json
-            wear_json = {}
-            wear_json["price"] = value
-            wear_json["steam_price"] = round(steam_price, 2)
-            wear_json["buff163_id"] = id
 
-            additional_data = get_additional_data(skin_name, wear)
-
-            for item in additional_data:
-                wear_json[item] = additional_data[item]
-
-            if skin_name in dataset:
-                dataset[skin_name][wear] = wear_json
-            else:
-
-                json_item = {"id": item_id, wear: wear_json}
-                dataset[skin_name] = json_item
+            t = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            sql_query(db, mycursor, [skin_name, wear, value, steam_price, t])
+            print(mycursor.rowcount, "rows affected. unique_item = ", item_id)
             item_id += 1
-            print(item_id)
-    return dataset
+        print("end")
 
 
 if __name__ == "__main__":
-    # key = environ("steam_web_api_key")
-    # get_items_steam_API(key)
-    full_st = time.time()
-    json_manipulations.write_json(get_items(), "result.json")
-    full_et = time.time()
-    full_time = full_et - full_st
-    print("full exec time is = ", full_time)
+    # make it loop
+    get_items()
