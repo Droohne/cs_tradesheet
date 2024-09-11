@@ -47,16 +47,16 @@ def sql_query(db, cursor, vals):
 
 def get_items():
     db = mysql.connector.connect(
-        host = os.environ.get("HOST"),
-        database = os.environ.get("MYSQL_DATABASE"),
-        user = os.environ.get("MYSQL_USER"),
-        password = os.environ.get("MYSQL_PASSWORD"),
-        port = os.environ.get("MYSQL_PORT"),
+        host=os.environ.get("HOST"),
+        database=os.environ.get("MYSQL_DATABASE"),
+        user=os.environ.get("MYSQL_USER"),
+        password=os.environ.get("MYSQL_PASSWORD"),
+        port=os.environ.get("MYSQL_PORT"),
     )
     mycursor = db.cursor()
 
     steam_price_fees_mult = 0.86956521739
-    CNY_price = convert_to_RUB("CNY") * 1.02 # with commision
+    CNY_price = convert_to_RUB("CNY") * 1.02  # with commision
 
     base_link = "https://buff.163.com/api/market/goods/sell_order?game=csgo&goods_id="
     item_id = 1

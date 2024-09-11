@@ -1,0 +1,36 @@
+x-env: &common-env
+    MYSQL_DATABASE: 'cs_items'
+    MYSQL_USER: 'user_user'
+    MYSQL_PASSWORD: 'user_bad'
+
+services:
+    python-app:
+        image: droohne/python_mysql_app
+        restart: on-failure
+        environment:
+           <<: *common-env
+           HOST: 'mysql'
+           MYSQL_PORT: '3306' 
+        depends_on:
+            mysql:
+              condition: service_healthy              
+    mysql:
+        image: mysql:8.0.39
+        restart: always
+        environment:
+           <<: *common-env 
+           MYSQL_ROOT_PASSWORD: 'qroot'
+        ports:
+            # <Port exposed> : <MySQL Port running inside container>
+            - '33061:3306'
+        healthcheck:
+             test: mysqladmin ping -h 127.0.0.1 -u $$MYSQL_USER --password=$$MYSQL_PASSWORD
+             start_period: 5s
+             interval: 5s
+             timeout: 5s
+             retries: 55
+        volumes:
+            - ./SCHEMA.sql:/docker-entrypoint-initdb.d/SCHEMA.sql
+            - database:/var/lib/mysql
+volumes:
+    database:

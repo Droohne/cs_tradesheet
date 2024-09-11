@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+# this is more of a job then Deployment. 
+kind: Deployment
+metadata:
+  name: python-mysql-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-mysql-app
+  template:
+    metadata:
+      labels:
+        app: python-mysql-app
+    spec:
+      containers:
+        - name: python-mysql-app
+          image: droohne/python_mysql_app:fix
+          imagePullPolicy: IfNotPresent
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          env:
+            - name: HOST
+              value: mysql-service
+            - name: MYSQL_PORT
+              value: "33061"
+            - name: MYSQL_DATABASE
+              value: cs_items
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_USERNAME
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_USER_PASSWORD
