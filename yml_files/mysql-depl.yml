@@ -1,0 +1,84 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deployment
+  labels:
+    app: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:8.0.12
+          resources:
+            limits:
+              memory: "1024Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: root_password
+          volumeMounts:
+            - name: diff-mysql-initdb
+              mountPath: /docker-entrypoint-initdb.d
+            - mountPath: "/var/lib/mysql"
+              subPath: "mysql"
+              name: mysql-data-volume
+      volumes:
+        - name: diff-mysql-initdb
+          configMap:
+            name: mysql-initdb-conf
+        - name: mysql-data-volume
+          persistentVolumeClaim:
+            claimName: mysql-data-volume-disk
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-initdb-conf
+data:
+  init.sql: |
+        CREATE USER 'user_user' IDENTIFIED BY 'user_bad';
+        CREATE DATABASE IF NOT EXISTS cs_items;
+        USE cs_items;
+        CREATE TABLE IF NOT EXISTS items(
+            id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+            skin_name VARCHAR(40) NOT NULL,
+            skin_wear VARCHAR(40) NOT NULL,
+            buff163_price DOUBLE NOT NULL,
+            steam_real_price DOUBLE NOT NULL,
+            date_time VARCHAR(40) NOT NULL  
+        );
+        GRANT ALL PRIVILEGES ON cs_items.* TO user_user;
+        INSERT INTO cs_items (0, 'test', 'test', 0, 1, 'test');
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-data-volume-disk
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-service
+spec:
+  ports:
+  - port: 33061
+    targetPort: 3306
+  selector:
+    app: mysql
